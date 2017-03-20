@@ -15,7 +15,7 @@ RUN pacman -Syu --ignore ca-certificates --noconfirm
 RUN pacman-db-upgrade
 RUN pacman -S --force ca-certificates --noconfirm
 RUN trust extract-compat
-RUN pacman -S --force openbox tint2 tigervnc ttf-dejavu --noconfirm
+RUN pacman -S --force openbox tint2 tigervnc ttf-dejavu sudo --noconfirm
 
 # Build obmenu-generator package
 RUN useradd builder
