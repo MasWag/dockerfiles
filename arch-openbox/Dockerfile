@@ -15,11 +15,17 @@ RUN pacman -Syu --ignore ca-certificates --noconfirm
 RUN pacman-db-upgrade
 RUN pacman -S --force ca-certificates --noconfirm
 RUN trust extract-compat
-RUN pacman -S --force openbox tint2 tigervnc --noconfirm
+RUN pacman -S --force openbox tint2 tigervnc ttf-dejavu --noconfirm
+
+# Build obmenu-generator package
+RUN useradd builder
+RUN cd /tmp && sudo -u builder curl -L -O https://aur.archlinux.org/cgit/aur.git/snapshot/obmenu-generator.tar.gz && sudo -u builder tar zxvf obmenu-generator.tar.gz && cd obmenu-generator && sudo -u builder makepkg -r
+RUN pacman -U /tmp/obmenu-generator/obmenu-generator-*.pkg.tar.xz --noconfirm
 
 ADD xinitrc /etc/X11/xinit/xinitrc
 ADD .config /root/.config
 ADD xstartup /root/.vnc/xstartup
+RUN chmod +x /root/.vnc/xstartup
 
 RUN echo "root" | vncpasswd -f > /root/.vnc/passwd; \
     chmod 600 /root/.vnc/passwd
