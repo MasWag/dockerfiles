@@ -1,0 +1,6 @@
+[submodule "arch-openbox/.config/openbox"]
+	path = arch-openbox/.config/openbox
+	url = https://github.com/MasWag/openbox-config.git
+[submodule "arch-openbox/.config/tint2"]
+	path = arch-openbox/.config/tint2
+	url = https://gist.github.com/f6ecb306cf2be31d9f8b.git

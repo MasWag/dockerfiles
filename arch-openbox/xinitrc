@@ -1,0 +1,4 @@
+export PATH=$PATH:/usr/bin
+
+openbox &
+tint2 &
