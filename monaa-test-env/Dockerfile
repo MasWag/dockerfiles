@@ -9,4 +9,4 @@ RUN pacman-db-upgrade
 RUN trust extract-compat
 
 # Install depending packages
-RUN pacman -Sy --needed base-devel make cmake bison flex eigen boost clang doxygen git --noconfirm
+RUN pacman -Sy --needed base-devel make cmake bison flex eigen boost clang doxygen git ppl --noconfirm
