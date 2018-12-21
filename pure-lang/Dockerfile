@@ -1,16 +1,9 @@
-FROM base/archlinux
+FROM base/devel
 MAINTAINER "Masaki Waga" <masakiwaga@gmail.com>
 ENV container docker
 
-# Update building environment
-RUN pacman -Sy archlinux-keyring  --noconfirm
-RUN pacman -Su --noconfirm
-RUN pacman-db-upgrade
-RUN trust extract-compat
-RUN pacman -S --needed base-devel --noconfirm
-
 # Install depending packages
-RUN pacman -S gmp llvm35-libs mpfr readline llvm35 clang35 pcre --noconfirm
+RUN pacman -Sy gmp llvm35-libs mpfr readline llvm35 clang35 pcre --noconfirm
 
 # Build PURE package
 RUN useradd builder
