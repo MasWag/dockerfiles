@@ -11,7 +11,7 @@ RUN wget http://bitbucket.org/eigen/eigen/get/3.3.7.tar.gz && tar xvf 3.3.7.tar.
 RUN git clone https://github.com/MasWag/monaa.git
 
 # Build and Install tre2ta
-RUN mkdir -p monaa/build && cd monaa/build && cmake -DCMAKE_MODULE_PATH=/eigen/cmake -DCMAKE_BUILD_TYPE=Release .. && make tre2ta && install -m755 tre2ta /usr/local/bin &&  install -m644 ../doc/tre2ta.1 /usr/local/share/man/man1/
+RUN mkdir -p monaa/build && cd monaa/build && cmake -DCMAKE_MODULE_PATH=/eigen/cmake -DCMAKE_BUILD_TYPE=Release .. && make tre2ta && install -m755 tre2ta /usr/local/bin
 
 # Install build only dependencies
 RUN apk del --no-cache make cmake bison flex eigen-dev doxygen git
