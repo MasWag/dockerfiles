@@ -1,0 +1,5 @@
+#!/bin/bash
+# -*-Mode: sh-mode;-*-
+
+/usr/local/bin/tre2ta $@ | /opt/app/monaa2imitator
+
