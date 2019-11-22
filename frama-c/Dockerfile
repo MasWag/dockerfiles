@@ -1,4 +1,4 @@
-FROM ocaml/opam
+FROM ocaml/opam2
 
 MAINTAINER Masaki Waga "masakiwaga@gmail.com"
 RUN sudo apt-get update
