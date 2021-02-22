@@ -1,4 +1,4 @@
-FROM archlinux/base
+FROM archlinux/archlinux
 
 MAINTAINER Masaki Waga "masakiwaga@gmail.com"
 RUN pacman -Sy gcc cmake make libedit python --noconfirm

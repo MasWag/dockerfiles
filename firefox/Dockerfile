@@ -1,4 +1,4 @@
-FROM base/archlinux
+FROM archlinux/archlinux
 MAINTAINER "Masaki Waga" <masakiwaga@gmail.com>
 ENV container docker
 
